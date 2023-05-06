@@ -1,13 +1,9 @@
-exports.getDcHeroes = (req, res) => {
-  const { superhero } = req.body;
+exports.gerDcHeroes = (req, res) => {
   const heroes = require('./heroes.json');
-  let heroesMatch = heroes.filter((hero, index) => {
-    if (
-      hero.superhero.toLowerCase().includes(superhero.toLowerCase()) &&
-      hero.publisher == 'DC Comics'
-    ) {
-      return hero;
-    }
-  });
+  let heroesMatch = heroes.filter((hero)=>{
+      if(hero.publisher == "DC Comics"){
+          return hero;
+      };
+  })
   res.send(heroesMatch);
-};
+}

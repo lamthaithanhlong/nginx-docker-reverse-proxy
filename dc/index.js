@@ -16,7 +16,7 @@ app.use(function(req, res, next) {
 let getHeros = require('./heroes-api');
 
 app.get('/', (req, res) => res.send('DC API RUNNING'));
-app.post('/get-hero/', getHeros.getDcHeroes);
+app.post('/get-hero/', getHeros.gerDcHeroes);
 
 
 let server = app.listen(8191, async function() {
